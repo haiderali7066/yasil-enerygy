@@ -5,8 +5,8 @@ export default function Navbar() {
     <nav className="absolute top-0 w-full z-50 flex justify-between items-center px-8 py-6 text-white border-b border-white/20">
         <div className="flex items-center gap-2">
           {/* Logo Placeholder */}
-          <div className="w-10 h-10 bg-orange-500 rounded-sm flex items-center justify-center font-bold text-xl">W</div>
-          <span className="font-bold text-lg tracking-tight leading-tight">WORLD<br/>SPORTS<br/>SUMMIT</span>
+          <div className="w-10 h-10 bg-orange-500 rounded-sm flex items-center justify-center font-bold text-xl">YE</div>
+          <span className="font-bold text-lg tracking-tight leading-tight">Yasil<br/>Energy<br/>Pvt</span>
         </div>
         <div className="hidden md:flex items-center bg-white/10 backdrop-blur-md rounded-full px-6 py-3 space-x-8 text-sm font-medium">
           <a href="/about" className="hover:text-orange-400 transition">About</a>
