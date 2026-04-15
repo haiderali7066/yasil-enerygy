@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar'; // Adjust path if necessary
 import Footer from '@/components/Footer'; // Adjust path if necessary
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <header className="relative w-full h-[90vh] bg-black overflow-hidden">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
           alt="Summit Gathering" 
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
@@ -52,10 +53,10 @@ export default function Home() {
 
           {/* 2-5. Speaker Cards */}
           {[
-            { name: "Gianni Infantino", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" },
-            { name: "Nasser Al-Khelaifi", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" },
-            { name: "H.E. Saeed Hareb", img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" },
-            { name: "Ronaldo", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" },
+            { name: "Gianni Infantino", Image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" },
+            { name: "Nasser Al-Khelaifi", Image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" },
+            { name: "H.E. Saeed Hareb", Image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" },
+            { name: "Ronaldo", Image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" },
           ].map((speaker, i) => (
             <div key={i} className="bg-[#EFECE5] rounded-3xl relative overflow-hidden group">
               <div className="absolute top-5 left-5 z-20">
@@ -63,7 +64,7 @@ export default function Home() {
                 <p className="text-sm font-bold text-white drop-shadow-lg">{speaker.name}</p>
               </div>
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity"></div>
-              <img src={speaker.img} className="absolute inset-0 w-full h-full object-cover object-top grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt={speaker.name} loading="lazy" />
+              <Image src={speaker.Image} className="absolute inset-0 w-full h-full object-cover object-top grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt={speaker.name} loading="lazy" />
             </div>
           ))}
 
@@ -80,7 +81,7 @@ export default function Home() {
               <p className="text-sm font-bold text-white drop-shadow-lg">Khabib Nurmagomedov</p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity"></div>
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover object-top grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Speaker" loading="lazy" />
+            <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover object-top grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="Speaker" loading="lazy" />
           </div>
 
           {/* 8. Stat Card */}
@@ -107,12 +108,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[450px]">
             {[
-              { title: "Elite Women Sports", img: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop" },
-              { title: "Technology & AI", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" },
-              { title: "Philanthropy", img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop" }
+              { title: "Elite Women Sports", Image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop" },
+              { title: "Technology & AI", Image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" },
+              { title: "Philanthropy", Image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop" }
             ].map((theme, i) => (
               <div key={i} className="relative rounded-3xl overflow-hidden group cursor-pointer shadow-lg">
-                <img src={theme.img} alt={theme.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+                <Image src={theme.Image} alt={theme.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-80"></div>
                 <h3 className="absolute bottom-8 left-8 text-2xl font-bold text-white tracking-wide">{theme.title}</h3>
               </div>
@@ -123,7 +124,7 @@ export default function Home() {
 
       {/* Partner CTA */}
       <section className="bg-[#050505] py-28 relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop" alt="Runners" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" loading="lazy" />
+        <Image src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop" alt="Runners" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
           <h2 className="text-5xl font-extrabold text-white mb-6 tracking-tight">Be A Partner</h2>
@@ -145,12 +146,12 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "Sheikh Hamdan attends the World Sports Summit", img: "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=800&auto=format&fit=crop" },
-            { title: "World Sports Summit signs MoU with Real Madrid", img: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=800&auto=format&fit=crop" },
-            { title: "Record-breaking attendance at the 2026 Summit closing ceremony", img: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop" }
+            { title: "Sheikh Hamdan attends the World Sports Summit", Image: "https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=800&auto=format&fit=crop" },
+            { title: "World Sports Summit signs MoU with Real Madrid", Image: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=800&auto=format&fit=crop" },
+            { title: "Record-breaking attendance at the 2026 Summit closing ceremony", Image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop" }
           ].map((news, i) => (
             <div key={i} className="rounded-3xl overflow-hidden group cursor-pointer relative h-[380px] shadow-lg">
-              <img src={news.img} alt="News" className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+              <Image src={news.Image} alt="News" className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-white font-bold text-xl leading-tight group-hover:text-orange-400 transition-colors">{news.title}</h3>
