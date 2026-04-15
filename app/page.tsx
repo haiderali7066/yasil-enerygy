@@ -14,7 +14,7 @@ export default function Home() {
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
           alt="Summit Gathering" 
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          priority="true"
+          priority={true}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         
