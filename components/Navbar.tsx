@@ -102,9 +102,9 @@ export default function Navbar() {
               Place your logo file at: /public/logo.png
               Then this <Image> will render it automatically.
             */}
-            <div className="relative w-10 h-10 overflow-hidden rounded-sm">
+            <div className="relative w-20 h-20 overflow-hidden rounded-sm">
               <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="Yasil Energy Group"
                 fill
                 className="object-contain"
@@ -114,9 +114,7 @@ export default function Navbar() {
                 }}
               />
               {/* Fallback block — hidden once image loads */}
-              <div className="absolute inset-0 bg-orange-500 flex items-center justify-center font-extrabold text-white text-lg tracking-tighter select-none">
-                YE
-              </div>
+              
             </div>
             <div className="leading-none">
               <p className="text-white font-extrabold text-base tracking-tight">Yasil</p>

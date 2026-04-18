@@ -8,29 +8,29 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white border-t border-white/10">
-      <div className="max-w-[1300px] mx-auto px-6 py-16">
+      <div className="max-w-[1350px] mx-auto px-6 py-16">
 
         {/* TOP GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          {/* BRAND INFO */}
+          {/* BRAND */}
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
               Yasil Energy Group
             </h2>
 
-            <p className="text-green-400 text-sm font-semibold mt-1">
-              UAE Multi-Industry Business Group
+            <p className="text-orange-400 text-sm font-semibold mt-1">
+              Empowering Industries, Elevating Standards
             </p>
 
             <p className="text-white/60 text-sm mt-4 leading-relaxed">
-              Built on integrity, innovation, and industry expertise, YEGroup
-              operates across energy, trading, and maintenance sectors,
-              delivering high-performance solutions across the UAE.
+              A UAE-based multi-disciplinary business group operating in energy,
+              trading, and maintenance sectors with a strong foundation of integrity,
+              innovation, and industry expertise.
             </p>
 
             <div className="mt-6 text-xs text-white/40 space-y-1">
-              <p>📍 Abu Dhabi, UAE</p>
+              <p>📍 Abu Dhabi, United Arab Emirates</p>
               <p>📧 info@yasilenergy.com</p>
               <p>📞 +971 2 565 6023</p>
             </div>
@@ -43,33 +43,36 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col gap-3 text-sm">
-              <Link href="/" className="hover:text-green-400 transition">
+              <Link href="/" className="hover:text-orange-400 transition">
                 Home
               </Link>
-              <Link href="/about" className="hover:text-green-400 transition">
+              <Link href="/about" className="hover:text-orange-400 transition">
                 About Us
               </Link>
-              <Link href="/contact" className="hover:text-green-400 transition">
+              <Link href="/contact" className="hover:text-orange-400 transition">
                 Contact
               </Link>
 
               <button
                 onClick={() => setOpenCompanies(!openCompanies)}
-                className="text-left hover:text-green-400 transition"
+                className="text-left hover:text-orange-400 transition flex items-center gap-1"
               >
-                Companies ▼
+                Companies
+                <span className="text-xs text-white/50">
+                  {openCompanies ? "▲" : "▼"}
+                </span>
               </button>
 
-              {/* interactive dropdown */}
+              {/* COMPANIES DROPDOWN */}
               {openCompanies && (
-                <div className="ml-3 mt-2 flex flex-col gap-2 text-white/60 text-sm border-l border-white/10 pl-4">
-                  <Link href="/companies/yasil-energy" className="hover:text-green-400 transition">
+                <div className="ml-3 mt-2 flex flex-col gap-2 border-l border-white/10 pl-4 text-sm text-white/60">
+                  <Link href="/companies/yasil-energy" className="hover:text-orange-400 transition">
                     Yasil Energy
                   </Link>
-                  <Link href="/companies/quick-clean" className="hover:text-green-400 transition">
+                  <Link href="/companies/quick-clean" className="hover:text-orange-400 transition">
                     Quick Clean
                   </Link>
-                  <Link href="/companies/perfect-maintenance" className="hover:text-green-400 transition">
+                  <Link href="/companies/perfect-maintenance" className="hover:text-orange-400 transition">
                     Perfect Maintenance
                   </Link>
                 </div>
@@ -77,17 +80,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* COMPANY OVERVIEW */}
+          {/* GROUP INFO */}
           <div>
             <h3 className="text-sm font-semibold mb-5 uppercase tracking-wider text-white/80">
               Our Group
             </h3>
 
             <div className="text-sm text-white/60 space-y-3">
-              <p>✔ Energy Solutions</p>
-              <p>✔ Oil Field Trading</p>
-              <p>✔ General Trading</p>
-              <p>✔ Facility Maintenance</p>
+              <p>✔ Energy Solutions & EPC Projects</p>
+              <p>✔ Oil Field Equipment Trading</p>
+              <p>✔ General Trading Services</p>
+              <p>✔ Facility & Building Maintenance</p>
               <p>✔ UAE-Based Operations</p>
             </div>
 
@@ -99,24 +102,24 @@ export default function Footer() {
           {/* CTA */}
           <div>
             <h3 className="text-sm font-semibold mb-5 uppercase tracking-wider text-white/80">
-              Partner With Us
+              Work With Us
             </h3>
 
             <p className="text-white/60 text-sm leading-relaxed">
-              Whether you need energy solutions, trading services, or maintenance support,
-              Yasil Energy Group is your trusted partner.
+              Whether you're seeking energy solutions, trading services, or maintenance support,
+              Yasil Energy Group delivers reliable and scalable business solutions.
             </p>
 
             <Link
               href="/contact"
-              className="inline-block mt-6 bg-green-500 hover:bg-green-400 text-black px-5 py-2.5 rounded-full text-sm font-bold transition"
+              className="inline-block mt-6 bg-orange-500 hover:bg-orange-400 text-white px-6 py-2.5 rounded-full text-sm font-bold transition shadow-[0_0_20px_rgba(249,115,22,0.25)]"
             >
               Get In Touch
             </Link>
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
+        {/* DIVIDER */}
         <div className="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
           <p className="text-xs text-white/50">
@@ -124,13 +127,13 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6 text-xs text-white/50">
-            <Link href="/" className="hover:text-green-400 transition">
+            <Link href="/" className="hover:text-orange-400 transition">
               Home
             </Link>
-            <Link href="/about" className="hover:text-green-400 transition">
+            <Link href="/about" className="hover:text-orange-400 transition">
               About
             </Link>
-            <Link href="/contact" className="hover:text-green-400 transition">
+            <Link href="/contact" className="hover:text-orange-400 transition">
               Contact
             </Link>
           </div>
