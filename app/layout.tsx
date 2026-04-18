@@ -15,23 +15,45 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "World Sports Summit 2025 — Dubai",
+  title: "Yasil Energy Group | UAE Multi-Industry Business Group",
   description:
-    "The premier global platform bringing together elite decision makers, world-class athletes, and visionaries under the patronage of Sheikh Hamdan bin Mohammed.",
-  keywords: ["World Sports Summit", "Dubai", "Sports", "FIFA", "Athletes", "Sheikh Hamdan"],
+    "Yasil Energy Group (YEGroup) is a UAE-based multi-disciplinary business group operating in energy, trading, and maintenance sectors, delivering reliable and high-performance solutions across the region.",
+  keywords: [
+    "Yasil Energy",
+    "Yasil Energy Group",
+    "UAE business group",
+    "energy solutions UAE",
+    "oil field equipment trading",
+    "facility maintenance UAE",
+    "general trading UAE",
+  ],
   openGraph: {
-    title: "World Sports Summit 2025",
-    description: "The world's most influential sports gathering — Dubai, UAE.",
-    url: "https://www.worldsportssummit.org/",
-    siteName: "World Sports Summit",
+    title: "Yasil Energy Group",
+    description:
+      "Empowering industries, elevating standards. A UAE-based multi-disciplinary group operating in energy, trading, and maintenance.",
+    url: "https://www.yasilenergy.com/",
+    siteName: "Yasil Energy Group",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yasil Energy Group",
+    description:
+      "UAE-based multi-industry business group delivering energy, trading, and maintenance solutions.",
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="font-sans antialiased bg-white text-gray-900">{children}</body>
+      <body className="font-sans antialiased bg-white text-gray-900">
+        {children}
+      </body>
     </html>
   );
 }
