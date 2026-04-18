@@ -1,85 +1,140 @@
-"use client";
+'use client';
 
 import Link from "next/link";
-
-const footerLinks = {
-  Home: "/",
-  About: "/about",
-  Platform: "/platform",
-  Contact: "/contact",
-};
-
-const footerLinks2 = {
-  Speakers: "/speakers",
-  Partners: "/partners",
-  Schedule: "/schedule",
-  News: "/news",
-};
+import { useState } from "react";
 
 export default function Footer() {
+  const [openCompanies, setOpenCompanies] = useState(false);
+
   return (
-    <footer className="bg-[#0A0A0A] border-t border-white/10 pt-12 pb-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Logo + Description */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="20" cy="20" r="18" stroke="#C9A84C" strokeWidth="1.5" />
-                  <path d="M10 20 Q15 10 20 20 Q25 30 30 20" stroke="#C9A84C" strokeWidth="1.5" fill="none" />
-                  <path d="M10 20 Q15 30 20 20 Q25 10 30 20" stroke="white" strokeWidth="1" fill="none" opacity="0.5" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white text-xs font-bold tracking-[0.15em] uppercase leading-tight">WORLD</p>
-                <p className="text-[#C9A84C] text-xs font-bold tracking-[0.15em] uppercase leading-tight">SPORTS</p>
-                <p className="text-white text-[9px] tracking-widest uppercase leading-tight">SUMMIT</p>
-              </div>
-            </div>
-            <p className="text-white/50 text-xs leading-relaxed max-w-xs">
-              The premier global platform bringing together elite decision makers, athletes, and visionaries to shape the future of sports.
+    <footer className="bg-black text-white border-t border-white/10">
+      <div className="max-w-[1300px] mx-auto px-6 py-16">
+
+        {/* TOP GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+          {/* BRAND INFO */}
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Yasil Energy Group
+            </h2>
+
+            <p className="text-green-400 text-sm font-semibold mt-1">
+              UAE Multi-Industry Business Group
             </p>
+
+            <p className="text-white/60 text-sm mt-4 leading-relaxed">
+              Built on integrity, innovation, and industry expertise, YEGroup
+              operates across energy, trading, and maintenance sectors,
+              delivering high-performance solutions across the UAE.
+            </p>
+
+            <div className="mt-6 text-xs text-white/40 space-y-1">
+              <p>📍 Abu Dhabi, UAE</p>
+              <p>📧 info@yasilenergy.com</p>
+              <p>📞 +971 2 565 6023</p>
+            </div>
           </div>
 
-          {/* Links 1 */}
+          {/* QUICK LINKS */}
           <div>
-            <h4 className="text-white/30 text-[10px] tracking-widest uppercase mb-4">Navigation</h4>
-            <ul className="space-y-2.5">
-              {Object.entries(footerLinks).map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-white/60 hover:text-[#C9A84C] text-sm transition-colors duration-200">
-                    {label}
+            <h3 className="text-sm font-semibold mb-5 uppercase tracking-wider text-white/80">
+              Quick Links
+            </h3>
+
+            <div className="flex flex-col gap-3 text-sm">
+              <Link href="/" className="hover:text-green-400 transition">
+                Home
+              </Link>
+              <Link href="/about" className="hover:text-green-400 transition">
+                About Us
+              </Link>
+              <Link href="/contact" className="hover:text-green-400 transition">
+                Contact
+              </Link>
+
+              <button
+                onClick={() => setOpenCompanies(!openCompanies)}
+                className="text-left hover:text-green-400 transition"
+              >
+                Companies ▼
+              </button>
+
+              {/* interactive dropdown */}
+              {openCompanies && (
+                <div className="ml-3 mt-2 flex flex-col gap-2 text-white/60 text-sm border-l border-white/10 pl-4">
+                  <Link href="/companies/yasil-energy" className="hover:text-green-400 transition">
+                    Yasil Energy
                   </Link>
-                </li>
-              ))}
-            </ul>
+                  <Link href="/companies/quick-clean" className="hover:text-green-400 transition">
+                    Quick Clean
+                  </Link>
+                  <Link href="/companies/perfect-maintenance" className="hover:text-green-400 transition">
+                    Perfect Maintenance
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Links 2 */}
+          {/* COMPANY OVERVIEW */}
           <div>
-            <h4 className="text-white/30 text-[10px] tracking-widest uppercase mb-4">Explore</h4>
-            <ul className="space-y-2.5">
-              {Object.entries(footerLinks2).map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-white/60 hover:text-[#C9A84C] text-sm transition-colors duration-200">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-sm font-semibold mb-5 uppercase tracking-wider text-white/80">
+              Our Group
+            </h3>
+
+            <div className="text-sm text-white/60 space-y-3">
+              <p>✔ Energy Solutions</p>
+              <p>✔ Oil Field Trading</p>
+              <p>✔ General Trading</p>
+              <p>✔ Facility Maintenance</p>
+              <p>✔ UAE-Based Operations</p>
+            </div>
+
+            <div className="mt-5 text-xs text-white/40">
+              10+ Years Experience • 3 Specialized Companies • 100+ Clients
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div>
+            <h3 className="text-sm font-semibold mb-5 uppercase tracking-wider text-white/80">
+              Partner With Us
+            </h3>
+
+            <p className="text-white/60 text-sm leading-relaxed">
+              Whether you need energy solutions, trading services, or maintenance support,
+              Yasil Energy Group is your trusted partner.
+            </p>
+
+            <Link
+              href="/contact"
+              className="inline-block mt-6 bg-green-500 hover:bg-green-400 text-black px-5 py-2.5 rounded-full text-sm font-bold transition"
+            >
+              Get In Touch
+            </Link>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
-            Copyright 2025 World Sports Summit
+        {/* BOTTOM BAR */}
+        <div className="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+          <p className="text-xs text-white/50">
+            © {new Date().getFullYear()} Yasil Energy Group. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <Link href="#" className="text-white/30 hover:text-[#C9A84C] text-xs transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-white/30 hover:text-[#C9A84C] text-xs transition-colors">Terms of Use</Link>
+
+          <div className="flex gap-6 text-xs text-white/50">
+            <Link href="/" className="hover:text-green-400 transition">
+              Home
+            </Link>
+            <Link href="/about" className="hover:text-green-400 transition">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-green-400 transition">
+              Contact
+            </Link>
           </div>
+
         </div>
       </div>
     </footer>
