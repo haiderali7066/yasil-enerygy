@@ -66,13 +66,13 @@ export default function Footer() {
               {/* COMPANIES DROPDOWN */}
               {openCompanies && (
                 <div className="ml-3 mt-2 flex flex-col gap-2 border-l border-white/10 pl-4 text-sm text-white/60">
-                  <Link href="/companies/yasil-energy" className="hover:text-orange-400 transition">
+                  <Link href="/" className="hover:text-orange-400 transition">
                     Yasil Energy
                   </Link>
-                  <Link href="/companies/quick-clean" className="hover:text-orange-400 transition">
+                  <Link href="https://qc.yasilenergy.com/" className="hover:text-orange-400 transition">
                     Quick Clean
                   </Link>
-                  <Link href="/companies/perfect-maintenance" className="hover:text-orange-400 transition">
+                  <Link href="https://pgm.yasilenergy.com/" className="hover:text-orange-400 transition">
                     Perfect Maintenance
                   </Link>
                 </div>

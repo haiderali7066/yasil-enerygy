@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappButton = () => {
-  const phoneNumber = "97125656023"; // replace with your number (no +, use country code)
+  const phoneNumber = "97125656023";
   const message = "Hello, I want to inquire about your services";
 
   const handleClick = () => {
@@ -14,9 +15,27 @@ const WhatsappButton = () => {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110"
+      className="fixed bottom-10 right-5 z-50"
     >
-      <FaWhatsapp size={28} />
+      <div className="relative w-14 h-14">
+        
+        {/* Logo Circle */}
+        <div className="w-full h-full rounded-full bg-white shadow-lg border flex items-center justify-center overflow-hidden hover:scale-105 transition">
+          <Image
+            src="/wlogo.jpeg" // replace with your logo
+            alt="Company Logo"
+            width={36}
+            height={36}
+            className="object-contain"
+          />
+        </div>
+
+        {/* WhatsApp Dot */}
+        <div className="absolute top-0 right-0 bg-green-500 rounded-full p-1 shadow border-2 border-white">
+          <FaWhatsapp size={12} className="text-white" />
+        </div>
+
+      </div>
     </button>
   );
 };
