@@ -32,7 +32,7 @@ const WhatsappButton = () => {
 
         {/* WhatsApp Dot */}
         <div className="absolute top-0 right-0 bg-green-500 rounded-full p-1 shadow border-2 border-white">
-          <FaWhatsapp size={12} className="text-white" />
+          <FaWhatsapp size={15} className="text-white" />
         </div>
 
       </div>
