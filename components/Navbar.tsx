@@ -10,21 +10,21 @@ const companies = [
     tag: 'YASIL ENERGY',
     name: 'Oil Field Equipment Trading',
     sub: 'Oil & gas equipment, onshore & offshore support',
-    href: '/companies/yasil-energy',
+    href: '/',
     icon: '⚡',
   },
   {
     tag: 'QUICK CLEAN',
     name: 'General Trading L.L.C',
     sub: 'Appliances, cleaning & cooling equipment',
-    href: '/companies/quick-clean',
+    href: 'https://qc.yasilenergy.com/',
     icon: '🏪',
   },
   {
     tag: 'PERFECT MAINTENANCE',
     name: 'Reliable Maintenance Solutions',
     sub: 'Building & facility maintenance services',
-    href: '/companies/perfect-maintenance',
+    href: 'https://pgm.yasilenergy.com/',
     icon: '🔧',
   },
 ];
@@ -32,8 +32,7 @@ const companies = [
 const navLinks = [
   { label: 'Home',     href: '/' },
   { label: 'About',    href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'News',     href: '/news' },
+  
 ];
 
 export default function Navbar() {
