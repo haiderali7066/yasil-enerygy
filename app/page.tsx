@@ -1149,27 +1149,42 @@ function QuickLinksSection() {
 /* ══════════════════════════════════════════════════
    ROOT PAGE — LENIS SMOOTH SCROLL
 ══════════════════════════════════════════════════ */
+'use client';
+
+import { useEffect } from 'react';
+
 export default function Home() {
   useEffect(() => {
-    let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
-    let rafId: number;
+    let lenis: {
+      raf: (time: number) => void;
+      destroy: () => void;
+    } | null = null;
+
+    let rafId: number | null = null;
 
     (async () => {
       try {
         const { default: Lenis } = await import('lenis');
-        lenis = new Lenis({ lerp: 0.075, smoothWheel: true }) as typeof lenis;
+
+        // ✅ FIX: removed wrong casting
+        lenis = new Lenis({
+          lerp: 0.075,
+          smoothWheel: true,
+        });
+
         const raf = (time: number) => {
-          lenis!.raf(time);
+          lenis?.raf(time); // ✅ safe call
           rafId = requestAnimationFrame(raf);
         };
+
         rafId = requestAnimationFrame(raf);
       } catch {
-        /* lenis not installed — graceful fallback */
+        // lenis not installed — fallback
       }
     })();
 
     return () => {
-      cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
       lenis?.destroy();
     };
   }, []);
@@ -1179,7 +1194,6 @@ export default function Home() {
       className="min-h-screen bg-[#FAFAF8] text-gray-900 selection:bg-orange-500 selection:text-white"
       style={{ fontFamily: "'Roboto', sans-serif" }}
     >
-      {/* FONTS */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Condensed:wght@700;900&display=swap');
         html { scroll-behavior: smooth; }
