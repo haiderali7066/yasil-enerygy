@@ -17,22 +17,22 @@ const WhatsappButton = () => {
       onClick={handleClick}
       className="fixed bottom-10 right-5 z-50"
     >
-      <div className="relative w-14 h-14">
+      <div className="relative w-17 h-17">
         
         {/* Logo Circle */}
         <div className="w-full h-full rounded-full bg-white shadow-lg border flex items-center justify-center overflow-hidden hover:scale-105 transition">
           <Image
             src="/wlogo.jpeg" // replace with your logo
             alt="Company Logo"
-            width={36}
-            height={36}
+            width={46}
+            height={46}
             className="object-contain"
           />
         </div>
 
         {/* WhatsApp Dot */}
         <div className="absolute top-0 right-0 bg-green-500 rounded-full p-1 shadow border-2 border-white">
-          <FaWhatsapp size={15} className="text-white" />
+          <FaWhatsapp size={25} className="text-white" />
         </div>
 
       </div>

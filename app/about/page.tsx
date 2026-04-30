@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from "next/link";
 
 function useReveal(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -145,12 +146,12 @@ export default function About() {
             Whether you're a client, partner, or industry professional — Yasil Energy Group welcomes long-term relationships built on trust, quality, and mutual growth.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-orange-500 hover:bg-orange-400 text-white px-10 py-4 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]">
-              Contact Us
-            </button>
-            <button className="bg-transparent border border-white/40 text-white px-10 py-4 rounded-full text-sm font-bold hover:bg-white hover:text-black transition-all duration-300">
-              Our Services
-            </button>
+            <Link href="/contact">
+  <button className="bg-orange-500 hover:bg-orange-400 text-white px-10 py-4 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]">
+    Contact Us
+  </button>
+</Link>
+            
           </div>
         </div>
       </section>
