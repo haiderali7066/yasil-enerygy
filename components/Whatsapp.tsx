@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappButton = () => {
-  const phoneNumber = "97125656023";
+  const phoneNumber = "971505749786";
   const message = "Hello, I want to inquire about your services";
 
   const handleClick = () => {

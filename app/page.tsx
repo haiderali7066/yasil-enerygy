@@ -1149,9 +1149,7 @@ function QuickLinksSection() {
 /* ══════════════════════════════════════════════════
    ROOT PAGE — LENIS SMOOTH SCROLL
 ══════════════════════════════════════════════════ */
-// 'use client';
 
-// import { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
